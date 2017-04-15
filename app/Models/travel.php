@@ -16,6 +16,9 @@ class travel extends Model
 
     public $table = 'travels';
     
+    public $primaryKey = ('id');
+
+    
 
     protected $dates = ['deleted_at'];
 
@@ -60,5 +63,11 @@ class travel extends Model
         'programme' => 'required'
     ];
 
+
+
+     public function users()
+    {
+        return $this->belongsToMany('App\Models\user','travel_users')->withPivot('user_id');
+    }
     
 }

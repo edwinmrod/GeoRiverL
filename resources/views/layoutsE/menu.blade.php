@@ -10,4 +10,8 @@
 </li>
 
 
+<li class="{{ Request::is('travelsRegistered*') ? 'active' : '' }}">
+    <a href="{!! route('travelsRegistered.index') !!}"><i class="fa fa-edit"></i><span>Salidas Inscritas</span></a>
+</li>
+
 

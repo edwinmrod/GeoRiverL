@@ -15,14 +15,14 @@ class travelUser extends Model
     use SoftDeletes;
 
     public $table = 'travel_users';
-    
+    public $primaryKey = ('id');
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'idTravel',
-        'idUser'
+        'travel_id',
+        'user_id'
     ];
 
     /**
@@ -31,8 +31,8 @@ class travelUser extends Model
      * @var array
      */
     protected $casts = [
-        'idTravel' => 'integer',
-        'idUser' => 'integer'
+        'travel_id' => 'integer',
+        'user_id' => 'integer'
     ];
 
     /**
@@ -41,8 +41,8 @@ class travelUser extends Model
      * @var array
      */
     public static $rules = [
-        'idTravel' => 'required',
-        'idUser' => 'required'
+        'travel_id' => 'required',
+        'user_id' => 'required'
     ];
 
     

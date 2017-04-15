@@ -5,24 +5,29 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreatetravelRequest;
 use App\Http\Requests\UpdatetravelRequest;
 use App\Repositories\travelRepository;
+use App\Repositories\travelUserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use DB;
-use App\Http\Models\travelUser;
+use App\Models\travelUser;
+use App\Models\user;
+use App\Models\travel;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
 use Carbon\Carbon;
 
-class registerTravelController extends AppBaseController
+class travelRegisteredController  extends AppBaseController
 {
     /** @var  travelRepository */
     private $travelRepository;
+	 private $travelUserRepository;
 
-    public function __construct(travelRepository $travelRepo)
+    public function __construct(travelRepository $travelRepo,travelUserRepository $travelUserRepo)
     {
         $this->travelRepository = $travelRepo;
+		$this->travelUserRepository = $travelUserRepo;
     }
 
     /**
@@ -37,22 +42,29 @@ class registerTravelController extends AppBaseController
         $travels = $this->travelRepository->all();
 
 
-        
+         $idUser=Auth::user()->id;
         $roleUser=Auth::user()->role;
-             if($roleUser === 3) {
-
-            return view('travelsD.index')
-            ->with('travels', $travels);
-        }
 		
-		   else if($roleUser === 2) {
+//$travelUser=DB::table( 'travels','travel_users','users' )
+//->where('travels.id', 'travel_users.id_travel','and' )
+//->where('travel_users.id_user', 'users.id', 'and')
+//->where('users.id', $idUser)->get();
 
-            return view('travelsE.index')
-            ->with('travels', $travels);
-        }
+    $travelUser = user::with('travels')->where('users.id', $idUser)->get();
+
+
+     foreach ($travelUser as $r) {
+       $OnlyTravles= $r['travels'];
+
+    
+     }
+	  // $travelUser = travel::with('users')->get();
+   //$travelUser = travel::with('users')->get('travels');
 		
-        return view('travels.index')
-            ->with('travels', $travels);
+   return view('travelsRegistered.index')
+       ->with('travels', $OnlyTravles);
+
+     //return ($viaje);
     }
 
     /**
@@ -174,7 +186,7 @@ class registerTravelController extends AppBaseController
 	
 	if($pass==$passSended){
 	DB::table('travel_users')->insertGetId(
-    array('travel_id' => $id, 'user_id' => $idUser, 'created_at' => Carbon::now()->format('Y-m-d H:i:s'))
+    array('idTravel' => $id, 'idUser' => $idUser, 'created_at' => Carbon::now()->format('Y-m-d H:i:s'))
 );
 	 
 		Flash::success('Se ha inscrito');

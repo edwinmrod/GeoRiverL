@@ -32,7 +32,7 @@ Route::resource('variablesD', 'variableController');
 
 Route::resource('travels', 'travelController');
 Route::resource('travelsE', 'registerTravelController');
-
+Route::resource('travelsRegistered', 'travelRegisteredController');
 
 Route::resource('activities', 'activityController');
 

@@ -16,6 +16,8 @@ class user extends Model
 
     public $table = 'users';
     
+    public $primaryKey = ('id');
+    
 
     protected $dates = ['deleted_at'];
 
@@ -52,4 +54,10 @@ class user extends Model
     ];
 
     
+
+        public function travels()
+    {
+        return $this->belongsToMany('App\Models\travel','travel_users')->withPivot('travel_id');
+    }
+     
 }

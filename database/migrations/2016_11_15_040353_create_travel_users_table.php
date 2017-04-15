@@ -15,10 +15,10 @@ class CreatetravelUsersTable extends Migration
     {
         Schema::create('travel_users', function (Blueprint $table) {
             $table->increments('id')->unsigned()->unique();
-            $table->integer('idTravel');
-			$table->foreign('idTravel')->references('id')->on('travels');
-            $table->integer('idUser');
-			$table->foreign('idUser')->references('id')->on('users');
+            $table->integer('travel_id');
+			$table->foreign('travel_id')->references('id')->on('travels');
+            $table->integer('user_id');
+			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

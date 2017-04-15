@@ -15,7 +15,7 @@ class CreatetravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->increments('id')->unsigned()->unique();
-            $table->integer('idActivity')->unsigned()->unique();
+            $table->integer('idActivity');
 			$table->foreign('idActivity')->references('id')->on('activities');
             $table->text('nameTravel');
             $table->text('description');
