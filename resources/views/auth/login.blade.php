@@ -64,12 +64,10 @@
 
             </div>
             <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember" > Recuerdame
-                        </label>
-                    </div>
+                <div class="col-xs-8">    
+                    <a href="{{ url('/password/reset') }}">Olvide mi contraseña</a><br>
+                    <b>¿No tiene una cuenta?</b>
+                    <a href="{{ url('/register') }}" class="text-center">Cree una</a>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
@@ -78,10 +76,7 @@
                 <!-- /.col -->
             </div>
         </form>
-
-        <a href="{{ url('/password/reset') }}">Olvide mi contraseña</a><br>
-         <b>¿No tiene una cuenta?</b>
-        <a href="{{ url('/register') }}" class="text-center">Registrarse</a>
+         
 
     </div>
     <!-- /.login-box-body -->

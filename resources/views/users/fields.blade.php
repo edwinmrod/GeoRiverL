@@ -19,7 +19,7 @@
 <!-- Role Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('role', 'Rol:') !!}
-    {!! Form::number('role', null, ['class' => 'form-control']) !!}
+    {!! Form::select('role', ['1' => 'Admistrador', '2' => 'Estudiante', '3' => 'Profesor'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

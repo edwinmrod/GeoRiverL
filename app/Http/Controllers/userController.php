@@ -31,24 +31,22 @@ class userController extends AppBaseController
     {
         $this->userRepository->pushCriteria(new RequestCriteria($request));
         $users = $this->userRepository->all();
-
-		
+	
 		foreach ($users as $r) {
-
        
-        if( $r['role'] === "1"){
+            if( $r['role'] === "1"){
 
-        $r['role']="Administrador";
-        
-        }
-        else if($r['role'] === "2"){
-        $r['role']="Estudiante";
-        }
-        
-        else{
-        $r['role']="Profesor";
-        }
- } 
+            $r['role']="Administrador";
+            
+            }
+            else if($r['role'] === "2"){
+            $r['role']="Estudiante";
+            }
+            
+            else{
+            $r['role']="Profesor";
+            }
+        } 
         return view('users.index')
             ->with('users', $users);
     }
@@ -72,7 +70,7 @@ class userController extends AppBaseController
      */
     public function store(CreateuserRequest $request)
     {
-       $requestData = $request->all();
+        $requestData = $request->all();
         $password=bcrypt($request->input('password'));
         $requestData['password'] = $password;
         
@@ -99,8 +97,19 @@ class userController extends AppBaseController
 
             return redirect(route('users.index'));
         }
-
+        if($user->role == "1"){
+            $user->role="Administrador";
+            
+            }
+            else if($user->role == "2"){
+            $user['role']="Estudiante";
+            }
+            
+            else{
+            $user['role']="Profesor";
+            }
         return view('users.show')->with('user', $user);
+
     }
 
     /**
@@ -141,10 +150,9 @@ class userController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-
- $requestData = $request->all();
+        $requestData = $request->all();
         
-   $password=bcrypt($request->input('password'));
+        $password=bcrypt($request->input('password'));
         $requestData['password'] = $password;
 
         $user = $this->userRepository->update($requestData, $id);
@@ -153,10 +161,6 @@ class userController extends AppBaseController
 
         return redirect(route('users.index'));
     }
-
-	
-	
-
 
     /**
      * Remove the specified user from storage.

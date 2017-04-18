@@ -23,9 +23,10 @@
 </div>
 
 <!-- Role Field -->
+
 <div class="form-group">
     {!! Form::label('role', 'Rol:') !!}
-    <p>{!! $user->role !!}</p>
+     <p>{!! $user->role !!}</p>
 </div>
 
 <!-- Created At Field -->
