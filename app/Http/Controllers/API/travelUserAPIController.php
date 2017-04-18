@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace GeoRiver\Http\Controllers\API;
 
-use App\Http\Requests\API\CreatetravelUserAPIRequest;
-use App\Http\Requests\API\UpdatetravelUserAPIRequest;
-use App\Models\travelUser;
-use App\Repositories\travelUserRepository;
+use GeoRiver\Http\Requests\API\CreatetravelUserAPIRequest;
+use GeoRiver\Http\Requests\API\UpdatetravelUserAPIRequest;
+use GeoRiver\Models\travelUser;
+use GeoRiver\Repositories\travelUserRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 /**
  * Class travelUserController
- * @package App\Http\Controllers\API
+ * @package GeoRiver\Http\Controllers\API
  */
 
 class travelUserAPIController extends AppBaseController

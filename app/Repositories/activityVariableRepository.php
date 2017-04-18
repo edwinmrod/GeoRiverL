@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace GeoRiver\Repositories;
 
-use App\Models\activityVariable;
+use GeoRiver\Models\activityVariable;
 use InfyOm\Generator\Common\BaseRepository;
 
 class activityVariableRepository extends BaseRepository

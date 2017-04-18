@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests\API;
+namespace GeoRiver\Http\Requests\API;
 
-use App\Models\travelLocation;
+use GeoRiver\Models\travelLocation;
 use InfyOm\Generator\Request\APIRequest;
 
 class UpdatetravelLocationAPIRequest extends APIRequest

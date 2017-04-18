@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests\API;
+namespace GeoRiver\Http\Requests\API;
 
-use App\Models\activityUser;
+use GeoRiver\Models\activityUser;
 use InfyOm\Generator\Request\APIRequest;
 
 class CreateactivityUserAPIRequest extends APIRequest

@@ -3,7 +3,7 @@
         <th>Nombre</th>
         <th>Correo</th>
         <th>Rol</th>
-        <th colspan="3">Accion</th>
+        <th colspan="3">Herramientas</th>
     </thead>
     <tbody>
     @foreach($users as $user)
@@ -16,7 +16,7 @@
                 <div class='btn-group'>
                     <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro de eliminar el Usuario')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Esta seguro de eliminar el Usuario')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

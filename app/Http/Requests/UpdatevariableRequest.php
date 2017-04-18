@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace GeoRiver\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\variable;
+use GeoRiver\Models\variable;
 
 class UpdatevariableRequest extends FormRequest
 {

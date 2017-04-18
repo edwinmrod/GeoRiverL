@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreatelocationRequest;
-use App\Http\Requests\UpdatelocationRequest;
-use App\Repositories\locationRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreatelocationRequest;
+use GeoRiver\Http\Requests\UpdatelocationRequest;
+use GeoRiver\Repositories\locationRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

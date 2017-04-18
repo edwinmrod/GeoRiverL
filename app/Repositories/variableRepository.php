@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace GeoRiver\Repositories;
 
-use App\Models\variable;
+use GeoRiver\Models\variable;
 use InfyOm\Generator\Common\BaseRepository;
 
 class variableRepository extends BaseRepository

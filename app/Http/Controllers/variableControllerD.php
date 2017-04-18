@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreatevariableRequest;
-use App\Http\Requests\UpdatevariableRequest;
-use App\Repositories\variableRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreatevariableRequest;
+use GeoRiver\Http\Requests\UpdatevariableRequest;
+use GeoRiver\Repositories\variableRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

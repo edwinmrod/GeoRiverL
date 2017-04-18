@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreateuserRequest;
-use App\Http\Requests\UpdateuserRequest;
-use App\Repositories\userRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreateuserRequest;
+use GeoRiver\Http\Requests\UpdateuserRequest;
+use GeoRiver\Repositories\userRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -78,7 +78,7 @@ class userController extends AppBaseController
         
         $user = $this->userRepository->create($requestData);
 
-        Flash::success('User saved successfully.');
+        Flash::success('Usuario creado satisfactoriamente.');
 
         return redirect(route('users.index'));
     }
@@ -149,7 +149,7 @@ class userController extends AppBaseController
 
         $user = $this->userRepository->update($requestData, $id);
 
-        Flash::success('User updated successfully.');
+        Flash::success('Usuario actualizado satisfactoriamente.');
 
         return redirect(route('users.index'));
     }
@@ -177,7 +177,7 @@ class userController extends AppBaseController
 
         $this->userRepository->delete($id);
 
-        Flash::success('User deleted successfully.');
+        Flash::success('Usuario eliminado satisfactoriamente.');
 
         return redirect(route('users.index'));
     }

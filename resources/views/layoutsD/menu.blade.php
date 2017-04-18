@@ -1,9 +1,7 @@
 
-
 <li class="{{ Request::is('travels*') ? 'active' : '' }}">
     <a href="{!! route('travelsD.index') !!}"><i class="fa fa-edit"></i><span>Salidas</span></a>
 </li>
-
 
 <li class="{{ Request::is('activities*') ? 'active' : '' }}">
     <a href="{!! route('activitiesD.index') !!}"><i class="fa fa-edit"></i><span>Actividades</span></a>
@@ -18,5 +16,6 @@
     <a href="{!! route('perfil.index') !!}"><i class="fa fa-edit"></i><span>Perfil</span></a>
 </li>
 
-
-
+<li class="{{ Request::is('locations*') ? 'active' : '' }}">
+    <a href="{!! route('locations.index') !!}"><i class="fa fa-edit"></i><span>Lugares</span></a>
+</li>

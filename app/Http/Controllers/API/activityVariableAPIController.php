@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace GeoRiver\Http\Controllers\API;
 
-use App\Http\Requests\API\CreateactivityVariableAPIRequest;
-use App\Http\Requests\API\UpdateactivityVariableAPIRequest;
-use App\Models\activityVariable;
-use App\Repositories\activityVariableRepository;
+use GeoRiver\Http\Requests\API\CreateactivityVariableAPIRequest;
+use GeoRiver\Http\Requests\API\UpdateactivityVariableAPIRequest;
+use GeoRiver\Models\activityVariable;
+use GeoRiver\Repositories\activityVariableRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 /**
  * Class activityVariableController
- * @package App\Http\Controllers\API
+ * @package GeoRiver\Http\Controllers\API
  */
 
 class activityVariableAPIController extends AppBaseController

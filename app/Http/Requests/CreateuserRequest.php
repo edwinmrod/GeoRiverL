@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace GeoRiver\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\user;
+use GeoRiver\Models\user;
 
 class CreateuserRequest extends FormRequest
 {

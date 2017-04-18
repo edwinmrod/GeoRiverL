@@ -7,7 +7,7 @@
         <th>Clave</th>
         <th>Estado</th>
         <th>Programa</th>
-        <th colspan="3">Accion</th>
+        <th colspan="3">Herramientas</th>
     </thead>
     <tbody>
     @foreach($travels as $travel)
@@ -24,7 +24,7 @@
                 <div class='btn-group'>
                     <a href="{!! route('travels.show', [$travel->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('travels.edit', [$travel->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro de eliminar la Salida?')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Esta seguro de eliminar la Salida?')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

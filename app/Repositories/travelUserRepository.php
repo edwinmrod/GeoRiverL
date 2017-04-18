@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace GeoRiver\Repositories;
 
-use App\Models\travelUser;
+use GeoRiver\Models\travelUser;
 use InfyOm\Generator\Common\BaseRepository;
 
 class travelUserRepository extends BaseRepository

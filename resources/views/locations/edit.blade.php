@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layoutsD.app')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Ciudad
+            Lugar
         </h1>
    </section>
    <div class="content">

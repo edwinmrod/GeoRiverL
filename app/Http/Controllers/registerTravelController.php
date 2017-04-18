@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreatetravelRequest;
-use App\Http\Requests\UpdatetravelRequest;
-use App\Repositories\travelRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreatetravelRequest;
+use GeoRiver\Http\Requests\UpdatetravelRequest;
+use GeoRiver\Repositories\travelRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use DB;
-use App\Http\Models\travelUser;
+use GeoRiver\Http\Models\travelUser;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;

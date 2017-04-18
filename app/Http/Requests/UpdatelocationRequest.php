@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace GeoRiver\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\location;
+use GeoRiver\Models\location;
 
 class UpdatelocationRequest extends FormRequest
 {

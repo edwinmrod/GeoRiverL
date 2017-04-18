@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace GeoRiver\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use GeoRiver\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\User;
+use GeoRiver\User;
 class LoginController extends Controller
 {
     /*

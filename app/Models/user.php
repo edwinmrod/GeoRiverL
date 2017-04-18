@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace GeoRiver\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class user
- * @package App\Models
+ * @package GeoRiver\Models
  * @version November 15, 2016, 2:28 pm UTC
  */
 class user extends Model
@@ -57,7 +57,7 @@ class user extends Model
 
         public function travels()
     {
-        return $this->belongsToMany('App\Models\travel','travel_users')->withPivot('travel_id');
+        return $this->belongsToMany('GeoRiver\Models\travel','travel_users')->withPivot('travel_id');
     }
      
 }

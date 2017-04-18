@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace GeoRiver\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\activity;
+use GeoRiver\Models\activity;
 
 class UpdateactivityRequest extends FormRequest
 {

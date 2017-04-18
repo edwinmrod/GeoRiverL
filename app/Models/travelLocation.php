@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace GeoRiver\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class travelLocation
- * @package App\Models
+ * @package GeoRiver\Models
  * @version November 15, 2016, 3:35 am UTC
  */
 class travelLocation extends Model

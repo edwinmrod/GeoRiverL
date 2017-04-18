@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreateuserRequest;
-use App\Http\Requests\UpdateuserRequest;
-use App\Repositories\userRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreateuserRequest;
+use GeoRiver\Http\Requests\UpdateuserRequest;
+use GeoRiver\Repositories\userRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace GeoRiver\Http\Controllers;
 
-use App\Http\Requests\CreateactivityRequest;
-use App\Http\Requests\UpdateactivityRequest;
-use App\Repositories\activityRepository;
-use App\Http\Controllers\AppBaseController;
+use GeoRiver\Http\Requests\CreateactivityRequest;
+use GeoRiver\Http\Requests\UpdateactivityRequest;
+use GeoRiver\Repositories\activityRepository;
+use GeoRiver\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
