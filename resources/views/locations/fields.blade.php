@@ -1,13 +1,14 @@
 <!-- Namelocation Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nameLocation', 'NombreCiudad:') !!}
+    {!! Form::label('nameLocation', 'Nombre del Lugar:') !!}
     {!! Form::text('nameLocation', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Coordinate Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('coordinate', 'Coordenada:') !!}
-    {!! Form::text('coordinate', null, ['class' => 'form-control']) !!}
+    {!! Form::label('coordinate', 'Coordenada (Lat Long):') !!}
+    {!! Form::number('lat',null,['class' => 'form-control','step'=>'any'])!!}
+  	{!! Form::number('long',null,['class' => 'form-control','step'=>'any'])!!}
 </div>
 
 <!-- Submit Field -->

@@ -6,14 +6,14 @@
 
 <!-- Namelocation Field -->
 <div class="form-group">
-    {!! Form::label('nameLocation', 'NombreCiudad:') !!}
+    {!! Form::label('nameLocation', 'Nombre del Lugar:') !!}
     <p>{!! $location->nameLocation !!}</p>
 </div>
 
 <!-- Coordinate Field -->
 <div class="form-group">
-    {!! Form::label('coordinate', 'Coordenada:') !!}
-    <p>{!! $location->coordinate !!}</p>
+    {!! Form::label('coordinate', 'Coordenada (Lat Long): ') !!}
+    <p> {!! $location->coordinate !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -27,4 +27,3 @@
     {!! Form::label('updated_at', 'Modificado el:') !!}
     <p>{!! $location->updated_at !!}</p>
 </div>
-

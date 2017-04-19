@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route:: get('/mamp','MampController@index');
 
 Auth::routes();
 

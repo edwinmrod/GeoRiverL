@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Phaza\LaravelPostgis\Schema\Blueprint;
 
 class CreatelocationsTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreatelocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->increments('id')->unsigned()->unique();
             $table->text('nameLocation');
-            $table->text('coordinate');
+            $table->point('coordinate');
             $table->timestamps();
             $table->softDeletes();
         });

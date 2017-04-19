@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Phaza\LaravelPostgis\Geometries\Point;
+use GeoRiver\Models\Location as Location;
 
 class locationController extends AppBaseController
 {
@@ -55,11 +57,12 @@ class locationController extends AppBaseController
      */
     public function store(CreatelocationRequest $request)
     {
-        $input = $request->all();
-
-        $location = $this->locationRepository->create($input);
-
-        Flash::success('Location saved successfully.');
+        $location = new Location();
+        $location -> nameLocation = $request -> nameLocation;
+        $location -> coordinate = new Point($request-> long,$request-> lat);
+        $location -> save();
+        
+        Flash::success('Lugar guardado satisfactoriamente.');
 
         return redirect(route('locations.index'));
     }
@@ -76,7 +79,7 @@ class locationController extends AppBaseController
         $location = $this->locationRepository->findWithoutFail($id);
 
         if (empty($location)) {
-            Flash::error('Location not found');
+            Flash::error('Lugar no encontrado');
 
             return redirect(route('locations.index'));
         }
@@ -96,7 +99,7 @@ class locationController extends AppBaseController
         $location = $this->locationRepository->findWithoutFail($id);
 
         if (empty($location)) {
-            Flash::error('Location not found');
+            Flash::error('Lugar no encontrado');
 
             return redirect(route('locations.index'));
         }
@@ -117,14 +120,14 @@ class locationController extends AppBaseController
         $location = $this->locationRepository->findWithoutFail($id);
 
         if (empty($location)) {
-            Flash::error('Location not found');
+            Flash::error('Lugar no encontrado');
 
             return redirect(route('locations.index'));
         }
 
         $location = $this->locationRepository->update($request->all(), $id);
 
-        Flash::success('Location updated successfully.');
+        Flash::success('Lugar actualizado satisfactoriamente.');
 
         return redirect(route('locations.index'));
     }
@@ -141,14 +144,14 @@ class locationController extends AppBaseController
         $location = $this->locationRepository->findWithoutFail($id);
 
         if (empty($location)) {
-            Flash::error('Location not found');
+            Flash::error('Lugar no encontrado');
 
             return redirect(route('locations.index'));
         }
 
         $this->locationRepository->delete($id);
 
-        Flash::success('Location deleted successfully.');
+        Flash::success('Lugar eliminado satisfactoriamente.');
 
         return redirect(route('locations.index'));
     }

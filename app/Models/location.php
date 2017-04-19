@@ -4,7 +4,7 @@ namespace GeoRiver\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Phaza\LaravelPostgis\Eloquent\PostgisTrait;
 /**
  * Class location
  * @package GeoRiver\Models
@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class location extends Model
 {
     use SoftDeletes;
+    use PostgisTrait;
 
     public $table = 'locations';
     
@@ -22,9 +23,11 @@ class location extends Model
 
     public $fillable = [
         'nameLocation',
-        'coordinate'
+        
     ];
-
+    protected $postgisFields = [
+        'coordinate',
+    ];
     /**
      * The attributes that should be casted to native types.
      *
@@ -32,7 +35,8 @@ class location extends Model
      */
     protected $casts = [
         'nameLocation' => 'string',
-        'coordinate' => 'string'
+        'lat'=>'number',
+        'long'=>'number',
     ];
 
     /**
@@ -42,8 +46,8 @@ class location extends Model
      */
     public static $rules = [
         'nameLocation' => 'required',
-        'coordinate' => 'required'
+        'lat'=>'required',
+        'long'=>'required',
     ];
-
     
 }
