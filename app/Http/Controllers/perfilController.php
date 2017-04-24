@@ -30,46 +30,17 @@ class perfilController extends AppBaseController
     public function index(Request $request)
     {
 
-
-      $users=Auth::user();
-  //$this->userRepository->pushCriteria(new RequestCriteria($request));
-    //    $users = $this->userRepository->all();
+        $users=Auth::user();
+        if($users->role == 2){
+            return view('perfil2.index')
+            ->with('users', $users);
+        }
 
           return view('perfil.index')
             ->with('users', $users);
 
     }
-
-    /**
-     * Show the form for creating a new user.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('users.create');
-    }
-
-    /**
-     * Store a newly created user in storage.
-     *
-     * @param CreateuserRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateuserRequest $request)
-    {
-       $requestData = $request->all();
-        $password=bcrypt($request->input('password'));
-        $requestData['password'] = $password;
-        
-        $user = $this->userRepository->create($requestData);
-
-        Flash::success('User saved successfully.');
-
-        return redirect(route('users.index'));
-    }
-
+    
     /**
      * Display the specified user.
      *
@@ -84,10 +55,12 @@ class perfilController extends AppBaseController
         if (empty($user)) {
             Flash::error('User not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('perfil.index'));
         }
-
-        return view('users.show')->with('user', $user);
+        if($user->role==2){
+            return view('perfil2.show')->with('user', $user);
+        }
+        return view('perfil.show')->with('user', $user);
     }
 
     /**
@@ -104,10 +77,11 @@ class perfilController extends AppBaseController
         if (empty($user)) {
             Flash::error('User not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('perfil.index'));
         }
-
-
+        if($user->role==2){
+            return view('perfil2.edit')->with('user',$user);
+        }
 
         return view('perfil.edit')->with('user', $user);
     }
@@ -131,43 +105,19 @@ class perfilController extends AppBaseController
         }
 
 
- $requestData = $request->all();
+        $requestData = $request->all();
         
-   $password=bcrypt($request->input('password'));
+        $password=bcrypt($request->input('password'));
         $requestData['password'] = $password;
 
         $user = $this->userRepository->update($requestData, $id);
 
         Flash::success('Perfil Modificado');
-
-        return redirect(route('perfil.index'));
-    }
-
-	
-	
-
-
-    /**
-     * Remove the specified user from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $user = $this->userRepository->findWithoutFail($id);
-
-        if (empty($user)) {
-            Flash::error('User not found');
-
-            return redirect(route('users.index'));
+        
+        if($user->role == 2){
+            return redirect(route('perfil2.index'));
         }
-
-        $this->userRepository->delete($id);
-
-        Flash::success('User deleted successfully.');
-
-        return redirect(route('users.index'));
+            return redirect(route('perfil.index'));
     }
+
 }

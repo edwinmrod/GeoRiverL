@@ -1,18 +1,16 @@
 <table class="table table-responsive" id="activities-table">
     <thead>
-        <th>Actividad</th>
-        <th>Integrantes</th>
-        <th>Coordenadas</th>
-        <th>Clave</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Coordenadas (Lat Long)</th>
         <th colspan="3">Herramientas</th>
     </thead>
     <tbody>
     @foreach($activities as $activity)
         <tr>
             <td>{!! $activity->nameActivity !!}</td>
-            <td>{!! $activity->nameMember !!}</td>
+            <td>{!! $travel->description !!}</td>
             <td>{!! $activity->coordinateActivity !!}</td>
-            <td>{!! $activity->password !!}</td>
             <td>
                 {!! Form::open(['route' => ['activities.destroy', $activity->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

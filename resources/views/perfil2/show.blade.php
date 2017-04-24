@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layoutsE.app')
 
 @section('content')
     <section class="content-header">
@@ -10,8 +10,8 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('users.show_fields')
-                    <a href="{!! route('users.index') !!}" class="btn btn-default">Volver</a>
+                    @include('perfil2.show_fields')
+                    <a href="{!! route('perfil.index') !!}" class="btn btn-default">Volver</a>
                 </div>
             </div>
         </div>

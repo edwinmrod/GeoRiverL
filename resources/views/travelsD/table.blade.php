@@ -1,7 +1,6 @@
 <table class="table table-responsive" id="travels-table">
     <thead>
-        <th>Id Actividad</th>
-        <th>Nombre Salida</th>
+        <th>Nombre</th>
         <th>Descripcion</th>
         <th>Asignatura</th>
         <th>Clave</th>
@@ -12,7 +11,6 @@
     <tbody>
     @foreach($travels as $travel)
         <tr>
-            <td>{!! $travel->idActivity !!}</td>
             <td>{!! $travel->nameTravel !!}</td>
             <td>{!! $travel->description !!}</td>
             <td>{!! $travel->course !!}</td>

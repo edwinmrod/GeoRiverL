@@ -29,3 +29,10 @@ Route::resource('travel_locations', 'travelLocationAPIController');
 Route::resource('activity_users', 'travelUserAPIController');
 
 Route::resource('activity_variables', 'activityVariableAPIController');
+
+
+
+
+
+
+Route::resource('travel_activities', 'travelActivityAPIController');

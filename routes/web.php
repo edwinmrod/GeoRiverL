@@ -32,7 +32,9 @@ Route::resource('activitiesD', 'activityController');
 Route::resource('variablesD', 'variableController');
 
 Route::resource('travels', 'travelController');
+
 Route::resource('travelsE', 'registerTravelController');
+
 Route::resource('travelsRegistered', 'travelRegisteredController');
 
 Route::resource('activities', 'activityController');
@@ -42,6 +44,8 @@ Route::resource('variables', 'variableController');
 Route::resource('users', 'userController');
 
 Route::resource('perfil', 'perfilController');
+
+Route::resource('perfil2', 'perfilController');
 
 Route::resource('locations', 'locationController');
 

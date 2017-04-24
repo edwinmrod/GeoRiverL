@@ -17,14 +17,11 @@ class travel extends Model
     public $table = 'travels';
     
     public $primaryKey = ('id');
-
     
-
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'idActivity',
         'nameTravel',
         'description',
         'course',
@@ -39,7 +36,6 @@ class travel extends Model
      * @var array
      */
     protected $casts = [
-        'idActivity' => 'integer',
         'nameTravel' => 'string',
         'description' => 'string',
         'course' => 'string',
@@ -54,7 +50,6 @@ class travel extends Model
      * @var array
      */
     public static $rules = [
-        'idActivity' => 'required',
         'nameTravel' => 'required',
         'description' => 'required',
         'course' => 'required',

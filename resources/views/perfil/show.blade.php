@@ -10,7 +10,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('users.show_fields')
+                    @include('perfil.show_fields')
                     <a href="{!! route('perfil.index') !!}" class="btn btn-default">Volver</a>
                 </div>
             </div>

@@ -6,26 +6,14 @@
 
 <!-- Nameactivity Field -->
 <div class="form-group">
-    {!! Form::label('nameActivity', 'Actividad:') !!}
+    {!! Form::label('nameActivity', 'Nombre de la actividad:') !!}
     <p>{!! $activity->nameActivity !!}</p>
-</div>
-
-<!-- Namemember Field -->
-<div class="form-group">
-    {!! Form::label('nameMember', 'Integrantes:') !!}
-    <p>{!! $activity->nameMember !!}</p>
 </div>
 
 <!-- Coordinateactivity Field -->
 <div class="form-group">
-    {!! Form::label('coordinateActivity', 'Coordenadas:') !!}
+    {!! Form::label('coordinateActivity', 'Coordenada (Lat Long):') !!}
     <p>{!! $activity->coordinateActivity !!}</p>
-</div>
-
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Clave:') !!}
-    <p>{!! $activity->password !!}</p>
 </div>
 
 <!-- Created At Field -->

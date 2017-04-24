@@ -16,14 +16,8 @@
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
-<!-- Role Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('role', 'Rol:') !!}
-    {!! Form::number('role', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('users.index') !!}" class="btn btn-default">Cancelar</a>
+    <a href="{!! route('perfil.index') !!}" class="btn btn-default">Cancelar</a>
 </div>

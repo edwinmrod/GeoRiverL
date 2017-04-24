@@ -17,7 +17,6 @@ class location extends Model
 
     public $table = 'locations';
     
-
     protected $dates = ['deleted_at'];
 
 

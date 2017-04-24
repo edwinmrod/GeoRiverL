@@ -1,26 +1,19 @@
-<table class="table table-responsive" id="users-table">
+<table class="table table-responsive" id="perfil-table">
     <thead>
         <th>Nombre</th>
         <th>Correo</th>
-        <th>Rol</th>
-        <th colspan="3">Accion</th>
+        <th colspan="3">Herramienta</th>
     </thead>
     <tbody>
-    @foreach($users as $user)
         <tr>
-            <td>{!! $user->name !!}</td>
-            <td>{!! $user->email !!}</td>
-            <td>{!! $user->role !!}</td>
+            <td>{!! $users->name !!}</td>
+            <td>{!! $users->email !!}</td>
             <td>
-                {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                <div class='btn-group'>
-                    <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro de eliminar el Usuario')"]) !!}
-                </div>
-                {!! Form::close() !!}
+            <div class='btn-group'>
+                <a href="{!! route('perfil2.show', [$users->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+			     <a href="{!! route('perfil2.edit', [$users->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+            </div>
             </td>
-        </tr>
-    @endforeach
+        </tr>	
     </tbody>
 </table>

@@ -19,7 +19,6 @@ class CreateactivityVariablesTable extends Migration
 			$table->foreign('id_activity')->references('id')->on('activities');
             $table->integer('idVariable');
 			$table->foreign('idVariable')->references('id')->on('variables');
-			
             $table->timestamps();
             $table->softDeletes();
         });

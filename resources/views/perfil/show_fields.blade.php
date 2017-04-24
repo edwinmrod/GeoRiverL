@@ -16,18 +16,6 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Clave:') !!}
-    <p>{!! $user->password !!}</p>
-</div>
-
-<!-- Role Field -->
-<div class="form-group">
-    {!! Form::label('role', 'Rol:') !!}
-    <p>{!! $user->role !!}</p>
-</div>
-
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Creado el:') !!}
@@ -39,4 +27,3 @@
     {!! Form::label('updated_at', 'Modificado el:') !!}
     <p>{!! $user->updated_at !!}</p>
 </div>
-

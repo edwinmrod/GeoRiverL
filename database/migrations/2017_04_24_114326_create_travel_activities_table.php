@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatetravelsTable extends Migration
+class CreatetravelActivitiesTable extends Migration
 {
 
     /**
@@ -13,14 +13,12 @@ class CreatetravelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('travels', function (Blueprint $table) {
+        Schema::create('travel_activities', function (Blueprint $table) {
             $table->increments('id')->unsigned()->unique();
-            $table->text('nameTravel');
-            $table->text('description');
-            $table->text('course');
-            $table->text('password');
-            $table->text('state');
-            $table->text('programme');
+            $table->integer('id_activity');
+            $table->foreign('id_activity')->references('id')->on('activities');
+            $table->integer('id_travel');
+            $table->foreign('id_travel')->references('id')->on('travels');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +31,6 @@ class CreatetravelsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('travels');
+        Schema::drop('travel_activities');
     }
 }

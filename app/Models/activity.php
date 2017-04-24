@@ -4,7 +4,7 @@ namespace GeoRiver\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Phaza\LaravelPostgis\Eloquent\PostgisTrait;
 /**
  * Class activity
  * @package GeoRiver\Models
@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class activity extends Model
 {
     use SoftDeletes;
+    use PostgisTrait;
 
     public $table = 'activities';
     
@@ -22,11 +23,12 @@ class activity extends Model
 
     public $fillable = [
         'nameActivity',
-        'nameMember',
-        'coordinateActivity',
-        'password'
+        'description',
     ];
 
+    protected $postgisFields = [
+        'coordinateActivity',
+    ];
     /**
      * The attributes that should be casted to native types.
      *
@@ -34,9 +36,9 @@ class activity extends Model
      */
     protected $casts = [
         'nameActivity' => 'string',
-        'nameMember' => 'string',
-        'coordinateActivity' => 'string',
-        'password' => 'string'
+        'description'=>'string',
+        'lat'=>'number',
+        'long'=>'number',
     ];
 
     /**
@@ -46,10 +48,9 @@ class activity extends Model
      */
     public static $rules = [
         'nameActivity' => 'required',
-        'nameMember' => 'required',
-        'coordinateActivity' => 'required',
-        'password' => 'required'
+        'description'=>'required'
+        'lat'=>'required',
+        'long'=>'required',
     ];
-
     
 }

@@ -32,17 +32,15 @@ class travelController extends AppBaseController
     {
         $this->travelRepository->pushCriteria(new RequestCriteria($request));
         $travels = $this->travelRepository->all();
-
-
         
         $roleUser=Auth::user()->role;
-             if($roleUser === 3) {
+        if($roleUser === 3) {
 
             return view('travelsD.index')
             ->with('travels', $travels);
         }
 		
-		   else if($roleUser === 2) {
+		else if($roleUser === 2) {
 
             return view('travelsE.index')
             ->with('travels', $travels);

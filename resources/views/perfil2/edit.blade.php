@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layoutsE.app')
 
 @section('content')
     <section class="content-header">
@@ -11,9 +11,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
+                   {!! Form::model($user, ['route' => ['perfil2.update', $user->id], 'method' => 'patch']) !!}
 
-                        @include('users.fields')
+                        @include('perfil.fields')
 
                    {!! Form::close() !!}
                </div>
