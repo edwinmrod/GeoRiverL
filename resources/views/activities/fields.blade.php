@@ -4,22 +4,17 @@
     {!! Form::text('nameActivity', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Namemember Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('nameMember', 'Integrante:') !!}
-    {!! Form::text('nameMember', null, ['class' => 'form-control']) !!}
+<!-- Description Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description', 'Descripcion:') !!}
+    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Coordinateactivity Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('coordinateActivity', 'Coordenadas:') !!}
-    {!! Form::text('coordinateActivity', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Password Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('password', 'Clave:') !!}
-    {!! Form::password('password', ['class' => 'form-control']) !!}
+    {!! Form::number('lat',null,['class' => 'form-control','step'=>'any'])!!}
+  	{!! Form::number('long',null,['class' => 'form-control','step'=>'any'])!!}
 </div>
 
 <!-- Submit Field -->

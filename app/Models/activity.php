@@ -48,7 +48,7 @@ class activity extends Model
      */
     public static $rules = [
         'nameActivity' => 'required',
-        'description'=>'required'
+        'description'=>'required',
         'lat'=>'required',
         'long'=>'required',
     ];

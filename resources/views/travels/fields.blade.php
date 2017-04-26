@@ -1,12 +1,7 @@
-<!-- Idactivity Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('idActivity', 'IdActividad:') !!}
-    {!! Form::number('idActivity', null, ['class' => 'form-control']) !!}
-</div>
-
+ <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 <!-- Nametravel Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nameTravel', 'Nombre Salida:') !!}
+    {!! Form::label('nameTravel', 'Nombre de la Salida:') !!}
     {!! Form::text('nameTravel', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -39,6 +34,24 @@
     {!! Form::label('programme', 'Programa:') !!}
     {!! Form::text('programme', null, ['class' => 'form-control']) !!}
 </div>
+
+<div class="form-group col-sm-12">
+     <thead>
+        <th> <a href="#" class="addRow"><i class="glyphicon glyphicon-plus"></i></a></th>
+    </thead>
+</div>
+
+<script type="text/javascript">
+    $('.addRow').on('click',function(){
+        addRow();
+    });
+    function addRow()
+    {
+        var tr='<th>Nombre</th>';
+        $('thead').append(tr);
+        alert('prueba');            
+    }
+</script>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

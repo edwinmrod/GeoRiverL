@@ -1,8 +1,3 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $travel->id !!}</p>
-</div>
 
 <!-- Idactivity Field -->
 <div class="form-group">
