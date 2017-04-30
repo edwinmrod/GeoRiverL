@@ -7,8 +7,8 @@
 <!-- Coordinate Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('coordinate', 'Coordenada (Lat Long):') !!}
-    {!! Form::number('lat',null,['class' => 'form-control','step'=>'any'])!!}
-  	{!! Form::number('long',null,['class' => 'form-control','step'=>'any'])!!}
+    {!! Form::number('latitude',null,['class' => 'form-control','step'=>'any'])!!}
+  	{!! Form::number('longitude',null,['class' => 'form-control','step'=>'any'])!!}
 </div>
 
 <!-- Submit Field -->

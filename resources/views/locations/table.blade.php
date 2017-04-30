@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="locations-table">
     <thead>
         <th>Nombre del lugar</th>
-        <th>Coordenadas (Lat Long) </th>
+        <th colspan="2">Coordenadas (Lat Long) </th>
         <th colspan="3">Herramientas</th>
     </thead>
     <tbody>
@@ -9,7 +9,8 @@
     
         <tr>
             <td>{!! $location->nameLocation !!}</td>
-            <td>{!! $location->coordinate !!}</td>
+            <td>{!! $location->latitude !!}</td>
+            <td>{!! $location->longitude !!}</td>
             <td>
                 {!! Form::open(['route' => ['locations.destroy', $location->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

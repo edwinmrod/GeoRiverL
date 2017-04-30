@@ -12,7 +12,8 @@ class locationRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'nameLocation',
-        'coordinate'
+        'latitude',
+        'longitude',
     ];
 
     /**

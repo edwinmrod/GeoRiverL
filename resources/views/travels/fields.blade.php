@@ -1,11 +1,11 @@
- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+
 <!-- Nametravel Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nameTravel', 'Nombre de la Salida:') !!}
     {!! Form::text('nameTravel', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Description Field -->
+<!-- Description Field-->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('description', 'Descripcion:') !!}
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
@@ -35,21 +35,27 @@
     {!! Form::text('programme', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group col-sm-12">
-     <thead>
-        <th> <a href="#" class="addRow"><i class="glyphicon glyphicon-plus"></i></a></th>
-    </thead>
-</div>
 
+<div class="activity col-sm-12">
+        
+        <h1>
+            Actividades
+        </h1>
+        {!! Form::label('nameActivity', 'Nombre:') !!}
+        {!! Form::label('description', 'Descripcion:') !!}
+        {!! Form::label('coordinateActivity', 'Coordenadas:') !!}
+        <a href="#" class="addRow"><i class="glyphicon glyphicon-plus"></i></a>
+</div>
+     
 <script type="text/javascript">
     $('.addRow').on('click',function(){
         addRow();
     });
     function addRow()
     {
-        var tr='<th>Nombre</th>';
-        $('thead').append(tr);
-        alert('prueba');            
+        var tr='<p> "hola"</p>';
+        $('.activity').append(tr);
+        //alert('prueba');            
     }
 </script>
 

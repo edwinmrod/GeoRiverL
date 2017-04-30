@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Phaza\LaravelPostgis\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateactivitiesTable extends Migration
 {
@@ -17,7 +17,8 @@ class CreateactivitiesTable extends Migration
             $table->increments('id')->unsigned()->unique();
             $table->text('nameActivity');
             $table->text('description');
-            $table->point('coordinateActivity');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->timestamps();
             $table->softDeletes();
         });

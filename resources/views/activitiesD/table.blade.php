@@ -2,7 +2,7 @@
     <thead>
         <th>Nombre</th>
         <th>Descripcion</th>
-        <th>Coordenadas (Lat Long)</th>
+        <th colspan="2">Coordenadas (Lat Long)</th>
         <th colspan="3">Herramientas</th>
     </thead>
     <tbody>
@@ -10,7 +10,8 @@
         <tr>
             <td>{!! $activity->nameActivity !!}</td>
             <td>{!! $travel->description !!}</td>
-            <td>{!! $activity->coordinateActivity !!}</td>
+            <td>{!! $activity->latitude !!}</td>
+            <td>{!! $activity->longitude !!}</td>
             <td>
                 {!! Form::open(['route' => ['activities.destroy', $activity->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -13,7 +13,8 @@
 <!-- Coordinate Field -->
 <div class="form-group">
     {!! Form::label('coordinate', 'Coordenada (Lat Long): ') !!}
-    <p> {!! $location->coordinate !!}</p>
+    <p> {!! $location->latitude !!} </p> 
+    <p> {!! $location->longitude !!} </p>
 </div>
 
 <!-- Created At Field -->

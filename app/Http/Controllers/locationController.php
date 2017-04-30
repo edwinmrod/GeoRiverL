@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-use Phaza\LaravelPostgis\Geometries\Point;
-use GeoRiver\Models\Location as Location;
 
 class locationController extends AppBaseController
 {
@@ -57,10 +55,9 @@ class locationController extends AppBaseController
      */
     public function store(CreatelocationRequest $request)
     {
-        $location = new Location();
-        $location -> nameLocation = $request -> nameLocation;
-        $location -> coordinate = new Point($request-> long,$request-> lat);
-        $location -> save();
+        $input = $request->all();
+
+        $location = $this->locationRepository->create($input);
         
         Flash::success('Lugar guardado satisfactoriamente.');
 
@@ -117,6 +114,7 @@ class locationController extends AppBaseController
      */
     public function update($id, UpdatelocationRequest $request)
     {
+        
         $location = $this->locationRepository->findWithoutFail($id);
 
         if (empty($location)) {
@@ -126,7 +124,7 @@ class locationController extends AppBaseController
         }
 
         $location = $this->locationRepository->update($request->all(), $id);
-
+        
         Flash::success('Lugar actualizado satisfactoriamente.');
 
         return redirect(route('locations.index'));

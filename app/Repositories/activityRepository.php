@@ -12,9 +12,9 @@ class activityRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'nameActivity',
-        'nameMember',
-        'coordinateActivity',
-        'password'
+        'description',
+        'latitude',
+        'longitude'
     ];
 
     /**

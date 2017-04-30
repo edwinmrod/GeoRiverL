@@ -56,10 +56,10 @@ class activityController extends AppBaseController
     public function create()
     {
 
-             $roleUser=Auth::user()->role;
+        $roleUser=Auth::user()->role;
              if($roleUser === 3) {
-    return view('activitiesD.create');
-        }
+                return view('activitiesD.create');
+                }
         return view('activities.create');
     }
 

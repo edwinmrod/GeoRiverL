@@ -12,9 +12,12 @@
 
 <!-- Coordinateactivity Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('coordinateActivity', 'Coordenadas:') !!}
-    {!! Form::number('lat',null,['class' => 'form-control','step'=>'any'])!!}
-  	{!! Form::number('long',null,['class' => 'form-control','step'=>'any'])!!}
+     <thead>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Coordenadas (Lat Long)</th>
+        <th colspan="3">Herramientas</th>
+    </thead>
 </div>
 
 <!-- Submit Field -->
