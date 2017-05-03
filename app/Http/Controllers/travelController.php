@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Auth;
+use DB;
+use Carbon\Carbon;
 
 class travelController extends AppBaseController
 {
@@ -77,20 +79,43 @@ class travelController extends AppBaseController
      */
     public function store(CreatetravelRequest $request)
     {
-        $input = $request->all();
+        //$input = $request->all();
+$input =$request->except('descriptionActivity','latitude','longitude','nameActivity');
+$NamActivity=$request['nameActivity'];
+$descriptionActivity=$request['descriptionActivity'];
+$latitudActivity=$request['latitude'];
+$longitudActivity=$request['longitude'];
 
+	
+     
+
+
+ for($i=count($NamActivity)-1;$i>=0;$i--){
+
+	  //$lnameActivity[i]= $r['nameActivity'];
+	
+	 DB::table('activities')->insertGetId(
+    array('nameActivity' => $NamActivity[$i], 'description' => $descriptionActivity[$i],'latitude' => $latitudActivity[$i],'longitude' => $longitudActivity[$i], 'created_at' => Carbon::now()->format('Y-m-d H:i:s'))
+);
+	 
+	
+	
+}
+   
+		
         $travel = $this->travelRepository->create($input);
 
         Flash::success('Travel saved successfully.');
 
 
+		
       $roleUser=Auth::user()->role;
              if($roleUser === 3) {
 
           return redirect(route('travelsD.index'));
         
         }
-        
+         //return $NamActivity;
         return redirect(route('travels.index'));
     }
 

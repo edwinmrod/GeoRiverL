@@ -9,7 +9,7 @@
     @foreach($activities as $activity)
         <tr>
             <td>{!! $activity->nameActivity !!}</td>
-            <td>{!! $travel->description !!}</td>
+            <td>{!! $activity->description !!}</td>
             <td>{!! $activity->coordinateActivity !!}</td>
             <td>
                 {!! Form::open(['route' => ['activities.destroy', $activity->id], 'method' => 'delete']) !!}

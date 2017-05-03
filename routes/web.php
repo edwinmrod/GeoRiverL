@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/','WelcomeController@index');
+
+
+
+
+Route::resource('map', 'MapController');
 Route:: get('/mamp','MampController@index');
 
 Auth::routes();
